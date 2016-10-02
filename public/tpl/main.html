@@ -1,0 +1,14 @@
+<header class="header">
+  <img class="header-logo" src="/images/logo.svg" alt="Not a Real Company Logo" />
+  <h1 class="header-title">Not a Real Company</h1>
+  <p class="header-subtitle">Machine sensors app</p>
+</header>
+
+<nav class="actions">
+  <button type="button" class="button" ng-click="addSensor()" title="Listen to new sensor">Add sensor</button>
+  <button type="button" class="button button__danger" ng-click="cleanData()" title="Reset all the stored data">Clear all data</button>
+</nav>
+
+<main class="sensor-container">
+  <sensor class="sensor" ng-repeat="sensorData in sensorsData track by $index" index="{{$index}}" sensor-data="sensorData"></sensor>
+</main>

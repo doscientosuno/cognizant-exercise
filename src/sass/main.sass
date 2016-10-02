@@ -1,0 +1,112 @@
+// Variables
+$primary: #008080
+$danger: #aa1010
+$light: #eee
+$dark: #333
+
+// From https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,700,800
+/* latin */
+@font-face
+  font-family: 'Open Sans'
+  font-style: normal
+  font-weight: 400
+  src: local('Open Sans'), local('OpenSans'), url(https://fonts.gstatic.com/s/opensans/v13/cJZKeOuBrn4kERxqtaUH3VtXRa8TVwTICgirnJhmVJw.woff2) format('woff2')
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000
+
+// Common elements
+*
+  box-sizing: border-box
+
+html
+  font: 16px 'Open Sans', sans-serif
+  background: $light
+  color: $dark
+
+.container
+  margin: 0 auto 3rem
+  width: 100%
+  max-width: 1024px
+
+.button
+  border: none
+  color: $light
+  background: $primary
+  border-radius: 0
+  padding: .5rem
+  text-decoration: none
+  transition: all .2s ease-in-out
+  &:hover
+    cursor: pointer
+    background: lighten($primary, 5)
+  &__danger
+    background: $danger
+    &:hover
+      background: lighten($danger, 5)
+
+// Header component
+.header
+  margin-top: 1rem
+  text-align: center
+.header-logo
+  width: 50%
+.header-title
+  font-variant: small-caps
+  font-size: 2rem
+  margin-bottom: 0
+  @media screen and (min-width: 768px)
+    font-size: 3rem
+.header-subtitle
+  font-size: 1.5rem
+  color: lighten($dark, 30)
+  margin-top: 0
+
+// Actions component
+.actions
+  text-align: center
+
+// Main sensor page
+.sensor-container
+  margin: 3rem 0
+.sensor
+  display: block
+  padding: 1rem
+  @media screen and (min-width: 480px)
+    float: left
+    width: 50%
+  @media screen and (min-width: 560px)
+    width: 33.3333%
+.sensor-content
+  border-radius: .5rem
+  background: lighten($primary, 70)
+  padding: 1rem
+
+// Single sensor page
+.single
+  margin-top: 3rem
+.single-data
+  text-align: center
+.single-list
+  list-style: none
+  text-align: center
+  padding: 0
+.single-item
+  padding: .5rem
+.single-value
+  font-size: 1.5rem
+.single-button
+  border: none
+  border-radius: 50%
+  width: 2rem
+  height: 2rem
+  color: $light
+  transition: all .2s ease-in-out
+  &:hover
+    cursor: pointer
+  &__less
+    background: $danger
+    &:hover
+      background: lighten($danger, 10)
+  &__more
+    background: $primary
+    &:hover
+      background: lighten($primary, 10)

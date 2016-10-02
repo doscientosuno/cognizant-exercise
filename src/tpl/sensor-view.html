@@ -1,0 +1,21 @@
+<header class="header">
+  <h1>Sensor ID: {{ index }}</h1>
+</header>
+<nav class="actions">
+  <a class="button" ng-href="#/">View all sensors</a>
+</nav>
+
+<main class="single">
+  <div class="single-data">
+    <strong>Last value</strong>: {{ sensorData[sensorData.length - 1] }}<br />
+    <strong>Min value</strong>: {{ sensorData | getMin }}<br />
+    <strong>Max value</strong>: {{ sensorData | getMax }}<br />
+  </div>
+  <ul class="single-list">
+    <li class="single-item" ng-repeat="value in sensorData track by $index">
+      <button class="single-button single-button__less" ng-click="setValue(index, $index, value - 1)">-</button>
+      <span class="single-value">{{ value }}</span>
+      <button class="single-button single-button__more" ng-click="setValue(index, $index, value + 1)">+</button>
+    </li>
+  </ul>
+</main>

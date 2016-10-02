@@ -1,0 +1,9 @@
+<div class="sensor-content">
+  <h2 class="sensor-title">Sensor {{ index }}</h2>
+  <p>
+    <strong>Last value</strong>: {{ sensorData[sensorData.length - 1] }}<br />
+    <strong>Min</strong>: {{ sensorData | getMin }}<br />
+    <strong>Max</strong>: {{ sensorData | getMax }}<br />
+  </p>
+  <a class="button" ng-href="#/sensors/{{ index }}" title="Explore sensor">Explore sensor</a>
+</div>
